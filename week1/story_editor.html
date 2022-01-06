@@ -1,7 +1,13 @@
 <!doctype html>
-<html>
+<html lang="en-us">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="Portfolio of work done for WDD 330 Web Frontend Development 2">
+        <meta name="author" content="Matt Rushton">
         <title>Story Writer</title>
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="stylesheet" href="../css/main.css">
         <script>
             function loadStory(){
                 var storyName = document.getElementById("name_input").value
@@ -29,6 +35,12 @@
     </head>
 
     <body>
+        <a href="../index.html">Home</a>
+    <header>
+        <h1>Matt Rushton WDD 330 Portfolio</h1>
+        <h2>Winter Semester 2022</h2>
+    </header>
+    <main>
         <h1>Story Editor</h1>
         Story Name:<input id=name_input></input>
         <section>
@@ -38,5 +50,6 @@
         </section>
         <textarea id="story_editor" placeholder="Write a totally awesome story here."></textarea>
         <section id="story_display"></section>
+    </main>
     </body>
 </html>
