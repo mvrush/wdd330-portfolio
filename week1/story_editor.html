@@ -7,7 +7,8 @@
         <meta name="author" content="Matt Rushton">
         <title>Story Writer</title>
         <link rel="shortcut icon" href="../favicon.ico">
-        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/small.css">
+        <link rel="stylesheet" href="../css/medium.css">
         <script>
             function loadStory(){
                 var storyName = document.getElementById("name_input").value
@@ -35,12 +36,19 @@
     </head>
 
     <body>
-        <a href="../index.html">Home</a>
     <header>
         <h1>Matt Rushton</h1>
         <h2>WDD 330 Portfolio</h2>
         <h3>Winter Semester 2022</h3>
     </header>
+    <nav class="clearfix">
+        <button onclick="toggleMenu()">&#9776; Menu</button>
+        <div class="mainnavigation">
+        <ul id="primaryNav" class="hide">
+                <li><a href="../index.html">Home</a></li> 
+            </ul>
+        </div>
+    </nav>
     <main>
         <h1>Story Editor</h1>
         Story Name:<input id=name_input></input>
@@ -52,5 +60,6 @@
         <textarea id="story_editor" placeholder="Write a totally awesome story here."></textarea>
         <section id="story_display"></section>
     </main>
+    <script src="../js/main.js"></script>
     </body>
 </html>

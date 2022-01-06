@@ -7,15 +7,24 @@
         <meta name="author" content="Matt Rushton">
         <title>WDD 330 Week 1</title> 
         <link rel="shortcut icon" href="../favicon.ico">
-        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/small.css">
+        <link rel="stylesheet" href="../css/medium.css">
     </head>
-    <body>
-        <a href="../index.html">Home</a>
-        <header>
-            <h1>Matt Rushton</h1>
-            <h2>WDD 330 Portfolio</h2>
-            <h3>Winter Semester 2022</h3>
-        </header>
+<body>
+    <header>
+        <h1>Matt Rushton</h1>
+        <h2>WDD 330 Portfolio</h2>
+        <h3>Winter Semester 2022</h3>
+    </header>
+    <nav class="clearfix">
+        <button onclick="toggleMenu()">Menu &#9776;</button>
+        <div class="mainnavigation">
+        <ul id="primaryNav" class="hide">
+                <li><a href="../index.html">Home</a></li>  
+            </ul>
+        </div>
+    </nav>
+    <main>
         <h1>WDD 330 Week 1</h1>
         <h3>Notes:</h3>
         <p>I felt very comfortable reading this book. It is mostly a review for me. I did find the definition of key value pairs to be important. The example of of a phonebook with the name being the key and the phone number being the value clicked with me.</p>
@@ -28,6 +37,8 @@
         <p>The only question I had concerning Localstorage is where on your local device is it stored? Is it the hard drive? If so, what directory is it stored in?</p>
         <h3>Story Editor Page:</h3>
         <a href="story_editor.html">See the Story Editor</a>
-    </body>
+    </main>
+    <script src="../js/main.js"></script>
+</body>
 
 </html>

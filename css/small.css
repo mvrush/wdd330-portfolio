@@ -1,0 +1,89 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+html {
+   background-color: #f2faf2;
+}
+
+/* padding and margin set to 0 to allow the background color of the heading to reach all the way across */
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/*-----------------------HEADER----------------------------*/
+header {
+    background: #C2EFEB;
+    color: black;
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
+}
+
+/*----------- NAVIGATION --------------*/
+nav button {
+    margin: 0 80%;
+    padding: 0;
+    display: block;
+    background-color: transparent;
+    border: none;
+    font-family: 'Fira sans', sans-serif;
+    font-size: 1.5rem; 
+    color: #331E36;
+    width: 6rem;
+}
+
+nav {
+    background-color: #6EA4BF;
+    padding: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; 
+}
+
+nav ul li a {
+    display: block;
+    color: #331E36;
+    padding: .8rem 0;
+    text-decoration: none;
+    font-size: .9rem;
+    text-align: center;
+    border: none;
+}
+
+
+nav ul li a:hover {
+    background-color: #FFE66D;
+    color: #333;
+}
+nav ul li.active a {
+    background-color: #e6d78e;
+    color: #333;
+}
+
+nav ul li.active a:hover {
+    background-color: #FFE66D;
+    color: #333;
+}
+
+nav ul.hide {display: none;}
+
+
+/*----------- MAIN --------------*/
+main {
+    padding: 0 2%;
+}
+
+
+/*----- Clearfix: Force an Element not to collapse -----*/
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

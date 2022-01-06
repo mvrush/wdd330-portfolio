@@ -6,20 +6,31 @@
         <meta name="description" content="Portfolio of work done for WDD 330 Web Frontend Development 2">
         <meta name="author" content="Matt Rushton">
         <link rel="shortcut icon" href="favicon.ico">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/small.css">
+        <link rel="stylesheet" href="css/medium.css">
         <title>WDD 330 Portfolio</title> 
     </head>
 <body>
-    <header>
+    <header class="header">
         <h1>Matt Rushton</h1>
         <h2>WDD 330 Portfolio</h2>
         <h3>Winter Semester 2022</h3>
     </header>
+    
+    <nav class="clearfix">
+        <button onclick="toggleMenu()">Menu &#9776;</button>
+        <div class="mainnavigation">
+        <ul id="primaryNav" class="hide">
+                <li class="active"><a href="index.html">Home</a></li>   
+            </ul>
+        </div>
+    </nav>
     <main>
         <ol>
             <li><a href="week1/index.html">Week01</a></li>
         </ol>
     </main>
+    <script src="js/main.js"></script>
     </body>
 
 </html>
