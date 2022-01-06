@@ -10,7 +10,7 @@ header {
     margin: 0;
 }
 
-header h1, h2 {
+header h1, h2, h3 {
     background-color: lightblue;
 }
 
