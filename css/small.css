@@ -120,6 +120,17 @@ main a:active {
     color: #449CC8;
 }
 
+ul {
+    list-style: square;
+    padding: 0 3rem;
+    font-size: 1.2rem;
+}
+
+ul li {
+    padding: 0;
+    margin-bottom: 0.3rem;
+}
+
 
 /*----- Clearfix: Force an Element not to collapse -----*/
 .clearfix:after {
