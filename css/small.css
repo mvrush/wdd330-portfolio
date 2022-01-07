@@ -14,6 +14,14 @@ body {
     margin: 0;
 }
 
+h1, h2, h3, h4, h5 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p, a {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 /*-----------------------HEADER----------------------------*/
 header {
     background: #C2EFEB;
@@ -52,7 +60,7 @@ nav ul li a {
     color: #331E36;
     padding: .8rem 0;
     text-decoration: none;
-    font-size: .9rem;
+    font-size: 1rem;
     text-align: center;
     border: none;
 }
@@ -78,6 +86,21 @@ nav ul.hide {display: none;}
 /*----------- MAIN --------------*/
 main {
     padding: 0 2%;
+}
+
+main a {
+    text-decoration: none;
+    color: #331E36;
+}
+
+main a:visited {
+    color: #554a81
+}
+
+/* note: a:hover must come AFTER a:visited to be effective */
+main a:hover {
+    color: #41337A;
+    background: #ecfee8;
 }
 
 
