@@ -70,6 +70,12 @@ nav ul li a:hover {
     background-color: #FFE66D;
     color: #333;
 }
+
+/* note: a:active must come AFTER a:hover to be effective */
+nav ul li a:active {
+    color: #449CC8;
+}
+
 nav ul li.active a {
     background-color: #e6d78e;
     color: #333;
@@ -79,6 +85,12 @@ nav ul li.active a:hover {
     background-color: #FFE66D;
     color: #333;
 }
+
+/* note: a:active must come AFTER a:hover to be effective */
+nav ul li.active a:active {
+    color: #449CC8;
+}
+
 
 nav ul.hide {display: none;}
 
@@ -94,13 +106,18 @@ main a {
 }
 
 main a:visited {
-    color: #554a81
+    color: #554a81;
 }
 
 /* note: a:hover must come AFTER a:visited to be effective */
 main a:hover {
     color: #41337A;
     background: #ecfee8;
+}
+
+/* note: a:active must come AFTER a:hover to be effective */
+main a:active {
+    color: #449CC8;
 }
 
 
