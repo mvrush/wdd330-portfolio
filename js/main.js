@@ -4,10 +4,17 @@ function toggleMenu() {
 }
 
 // links for homepage weekly assignments
-// const links = [
-//     {
-//         label: "Week01 notes",
-//         url: "week1/index.html"
-//     }
-// ]
-// document.getElementById("assignmentLinks").textContent = links(label, url)
+const links = [
+    {
+        label: "Week01 notes",
+        url: "week1/index.html"
+    },
+    {
+        label: "Week02 notes",
+        url: "#"
+    }
+]
+for(var i=0; i<links.length; i++) {
+document.getElementById("assignmentLinks").innerHTML +=
+    '<li>' + '<a href="' + links[i].url + '">' + links[i].label + '</a></li>'
+}
