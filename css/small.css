@@ -55,20 +55,28 @@ nav ul {
     margin: 0; 
 }
 
+nav ul li {
+    margin: 0; /* setting this margin to 0 removes the space around our nav items so that they're flush on the borders of the nav bar */
+}
+
 nav ul li a {
     display: block;
     color: #331E36;
-    padding: .8rem 0;
+    background: #93aebb;
+    padding: 0.8rem 0;
     text-decoration: none;
     font-size: 1rem;
     text-align: center;
     border: none;
+    transition-duration: .5s; /* works with scale found on the a:hover */
 }
 
 
 nav ul li a:hover {
     background-color: #FFE66D;
     color: #333;
+    scale: 1.2; /* changes the size of the element. Works with transition-duration set on the <a> element */
+    border-radius: 20px;
 }
 
 /* note: a:active must come AFTER a:hover to be effective */
