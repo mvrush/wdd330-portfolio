@@ -7,7 +7,7 @@ function toggleMenu() {
 const links = [
     {
         label: "Week01 notes",
-        url: "week1/index.html"
+        url: "week01/index.html"
     },
     {
         label: "Week02 notes",
