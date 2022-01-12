@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="Matt Rushton portfolio of work done for WDD 330 Web Frontend Development 2">
+        <meta name="author" content="Matt Rushton">
+        <title>WDD 330 Team 02 | Matt Rushton</title> 
+        <link rel="shortcut icon" href="../favicon.ico">
+        <link rel="stylesheet" href="../css/small.css">
+        <link rel="stylesheet" href="../css/medium.css">
+    </head>
+<body>
+    <header>
+        <h1>Matt Rushton</h1>
+        <h2>WDD 330 Portfolio</h2>
+        <h3>Winter Semester 2022</h3>
+    </header>
+    <nav class="clearfix">
+        <button onclick="toggleMenu()">Menu &#9776;</button>
+        <div class="mainnavigation">
+        <ul id="primaryNav" class="hide">
+                <li><a href="../index.html">Home</a></li>  
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <h1>WDD 330 Team 02</h1>
+        <h2>Display Text Function</h2>
+        <textarea id="textEntry" placeholder="Enter some text"></textarea>
+        <button onclick="displayText()">Display It</button>
+        <div id="textDisplay"></div>
+
+        <h2>Number Sum</h2>
+        <p>Enter a number to sum all the numbers up to that number</p>
+        <input type="number" id="numberEntry"></input>
+        <button onclick="sumNumber()">Sum</button>
+        <div id="sumDisplay"></div>
+
+        <h2>Adding Machine</h2>
+        <p>Enter two numbers to add together.</p>
+        <input type="number" id="inputNum1"></input> + <input type="number" id="inputNum2">
+        <button onclick="addNumbers()">Add Numbers</button>
+        <div id="totalDisplay"></div>
+
+    </main>
+    <script src="../js/team02.js"></script>
+</body>
+
+</html>
