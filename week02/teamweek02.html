@@ -17,6 +17,7 @@
             <input id="textEntry" type="text"></input>
             <button onclick="displayText()">Display It</button>
             <div id="textDisplay"></div>
+            <br>
 
             <h2>Number Sum</h2>
             <p>Enter a number to sum all the numbers up to that number</p>
@@ -27,7 +28,16 @@
             <input type="text" id="inputNum2"></input>
             <button onclick="addNumbers(document.getElementById('numberEntry').value, document.getElementById('inputNum2').value)">Add 1st and 2nd Numbers</button>
             <div id="sumDisplay"></div>
+            <br>
+
+            <h2>Stretch Goal</h2>
+            <input id="stretchNum1" placeholder="enter a number" type="number"/>
+            <input id="stretchNum2" placeholder="enter a number" type="number"/>
+            <button id="stretchAdd" onclick="performOperation(add2)">+</button>
+            <button id="stretchSub" onclick="performOperation(sub2)">-</button>
+            <button id="stretchMult" onclick="performOperation(mult2)">*</button>
+            <div id="stretchOutput"></div>
 
         </main>
-        <script src="/js/teamweek02.js"></script>
+        <script src="../js/teamweek02.js"></script>
     </body>
