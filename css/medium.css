@@ -1,6 +1,10 @@
 /* 35em is also 560px (if basefont is 16px) */
 @media only screen and (min-width: 35rem) {
 
+    p {
+        max-width: 65%;
+    }
+
     /*----------- NAVIGATION --------------*/
     nav {
         padding: 0 2%;

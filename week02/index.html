@@ -27,16 +27,38 @@
     <main>
         <h1>WDD 330 Week 02</h1>
         <h3>Notes:</h3>
-        <p>I felt very comfortable reading this book. It is mostly a review for me. I did find the definition of key value pairs to be important. The example of of a phonebook with the name being the key and the phone number being the value clicked with me.</p>
-        <p>From Master Mobile UX video
-            “If you design for the smallest, least powerful device first, then you will focus on the content, and your core functionality. That leads to simple, beautiful apps. If you do it the other way around, it’ll be like trying to put a marshmallow into a piggy bank, which is neither simple, nor beautiful.” - Joel March, The Hipper Element
+        <p>One important thing I learned this week was the use of <b>Template Literals</b> by using backticks.
+            It allows you to use both single and double quotes in a string. But the real power is that they let you interpolate JavaScript code inside the string. 
+            That means you can insert a JavaScript expression. For example it allows you to insert variable values into strings. 
+            <br>So instead of concatenating with + like this:<br>
+            <b>"hello" + name</b><br>
+            You can simply write:<br>
+            <b>`Hello ${name}`</b><br>
+            and it will output the string with the name contained in the variable.
         </p>
-        <p>	“The simple guidline is whatever you are doing – do mobile first.” - Eric Schmidt, World Mobile Congress Keynote 2012</p>
-        <p>Mobile traffic is skyrocketing because of the popularity of mobile devices. Mobile devices are replaced on the average every 2 years.</p>
+
+    <br>
         <h3>Questions:</h3>
-        <p>One question I had concerning Localstorage is where on your local device is it stored? Is it the hard drive? If so, what directory is it stored in?</p>
-        <h3>Story Editor Page:</h3>
-        <h4><a href="story_editor.html">See the Story Editor</a></h4>
+        <p>One question I had from the reading is this.<br>
+            Is there a preference to use Function Declarations like this:<br>
+        <b>
+            function hello() {<br>
+                console.log('Hello World!');
+            }
+        </b>
+        <br>
+            Or to use Function Expressions which store the function in a variable. Like this: <br>
+        <b>
+            const goodbye = function () { <br>
+                console.log('Goodbye World!');
+            }
+        </b>
+        <br>
+        Also, is there a time where you would use one instead of the other?
+        </p>
+    <br>
+        <h3>Team Assignment Week02:</h3>
+        <h4><a href="teamweek02.html">Link to Team Assignment Week02</a></h4>
     </main>
     <script src="../js/main.js"></script>
 </body>

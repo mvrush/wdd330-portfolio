@@ -11,7 +11,7 @@ const links = [
     },
     {
         label: "Week02 notes",
-        url: "#"
+        url: "week02/index.html"
     }
 ]
 for(var i=0; i<links.length; i++) {
