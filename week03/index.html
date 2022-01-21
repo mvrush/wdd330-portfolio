@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="Matt Rushton portfolio of work done for WDD 330 Web Frontend Development 2">
+        <meta name="author" content="Matt Rushton">
+        <title>WDD 330 Week 03 | Matt Rushton</title> 
+        <link rel="shortcut icon" href="../favicon.ico">
+        <link rel="stylesheet" href="../css/small.css">
+        <link rel="stylesheet" href="../css/medium.css">
+    </head>
+<body>
+    <header>
+        <h1>Matt Rushton</h1>
+        <h2>WDD 330 Portfolio</h2>
+        <h3>Winter Semester 2022</h3>
+    </header>
+    <nav class="clearfix">
+        <button onclick="toggleMenu()">Menu &#9776;</button>
+        <div class="mainnavigation">
+        <ul id="primaryNav" class="hide">
+                <li><a href="../index.html">Home</a></li>  
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <h1>WDD 330 Week 03</h1>
+        <h3>Notes:</h3>
+        <p>
+            The browser itself is an application. As an application it holds the JavaScript Runtime Engins (JRE), the DOM and the web API.
+        </p>
+
+        <p>
+            Here are some valuable links for figuring out and working with Regular Expressions.
+            <ul>
+                <li><a href="https://www.regular-expressions.info/">Regular Expressions Info</a></li>
+                <li><a href="https://regex101.com/">Regular Expressions 101</a></li>
+                <li><a href="https://www.regextester.com/">Online Regex Tester</a></li>
+            </ul>
+        </p>
+
+        <p>An object in JavaScript is a self-contained set of related values and functions. They act as a collection of named properties that map to any JavaScript value such as stings, numbers, booleans, arrays and even functions. If a property's value is a function, it is known as a <b>method</b>.<br>
+            This is an example of a JavaScript Object. It looks very similar to JSON format:<br>
+            const superman = {<br>
+                name: 'Superman',<br>
+                'real name': 'Clark Kent',<br>
+                height: 75,<br>
+                weight: 235,<br>
+                hero: true,<br>
+                villian: false,<br>
+                allies: ['Batman','Supergirl','Superbaby'],<br>
+                fly() {<br>
+                    return 'Up, up and away!';<br>
+               &emsp; }<br>
+            };
+
+        </p>
+
+    <br>
+        <h3>Questions:</h3>
+        <p>One question I had from the reading is this.<br>
+            Is there a preference to use Function Declarations like this:<br>
+        <b>
+            function hello() {<br>
+                console.log('Hello World!');
+            }
+        </b>
+        <br>
+            Or to use Function Expressions which store the function in a variable. Like this: <br>
+        <b>
+            const goodbye = function () { <br>
+                console.log('Goodbye World!');
+            }
+        </b>
+        <br>
+        Also, is there a time where you would use one instead of the other?
+        </p>
+    <br>
+        <h3>Team Assignment Week03:</h3>
+        <h4><a href="teamweek03.html">Link to Team Assignment Week03</a></h4>
+    </main>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
