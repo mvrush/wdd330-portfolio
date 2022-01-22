@@ -26,7 +26,7 @@
     </nav>
     <main>
         <h1>WDD 330 Week 03</h1>
-        <h3>Notes:</h3>
+        <h2>Notes:</h2>
         <p>
             The browser itself is an application. As an application it holds the JavaScript Runtime Engins (JRE), the DOM and the web API.
         </p>
@@ -40,6 +40,7 @@
             </ul>
         </p>
 
+        <h3>Notes on Objects</h3>
         <p>An object in JavaScript is a self-contained set of related values and functions. They act as a collection of named properties that map to any JavaScript value such as stings, numbers, booleans, arrays and even functions. If a property's value is a function, it is known as a <b>method</b>.<br>
             This is an example of a JavaScript Object which has all the different JavaScript values I listed earlier in it. It looks very similar to JSON format:<br>
             const superman = {<br>
@@ -56,25 +57,27 @@
             };
 
         </p>
-
+        <br>
+        <h3>Notes on the DOM</h3>
+        <p>
+            When you see a legacy DOM shortcut method like <b>Document.body</b> it is adressing everything found in the <u>HTML Document</u> under the &ltbody&gt tag.<br>
+            The same thing is true when you see something like <b>Document.links</b>. It is addressing everything found in the <u>HTML Document</u> that has an &lta&gt or &ltarea&gt tag and an <b>href</b> attribute.<br>            
+        </p>
+        <p>
+            One thing to remember is that when using CSS property names that are separated by dashes such as 'background-color' it must be written in camelCase notation in JavaScript. So it becomes 'backgroundColor'. Here's an example of it in use in JavaScript.<br>
+            <b>superman.style.backgroundColor = 'blue';</b><br>
+            Best practice is to add different CSS classes on the CSS stylesheet and then toggle them with JavaScript rather than writing CSS elements on the fly with JavaScript.
+        </p>
+        <br>
+        <h3>Notes on Events</h3>
+        <p>
+            Events are basically user interactions with the webpage. They can be by mouse click, scroll wheel, keyboard press or release. There are also touch events that can be used with touchscreens to trigger things.<br>
+            These events can be used to trigger JavaScript.
+        </p>
     <br>
         <h3>Questions:</h3>
-        <p>One question I had from the reading is this.<br>
-            Is there a preference to use Function Declarations like this:<br>
-        <b>
-            function hello() {<br>
-                console.log('Hello World!');
-            }
-        </b>
-        <br>
-            Or to use Function Expressions which store the function in a variable. Like this: <br>
-        <b>
-            const goodbye = function () { <br>
-                console.log('Goodbye World!');
-            }
-        </b>
-        <br>
-        Also, is there a time where you would use one instead of the other?
+        <p>
+            The only question I have this week has to do with <b>sibling, childNodes and Children</b> methods in the DOM tree. Why would you want to use these instead of addressing an element directly?
         </p>
     <br>
         <h3>Team Assignment Week03:</h3>
