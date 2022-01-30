@@ -22,6 +22,26 @@ p, a {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: #331E36;
+}
+
+a:visited {
+    color: #554a81;
+}
+
+/* note: a:hover must come AFTER a:visited to be effective */
+a:hover {
+    color: #41337A;
+    background: #ecfee8;
+}
+
+/* note: a:active must come AFTER a:hover to be effective */
+a:active {
+    color: #449CC8;
+}
+
 /*-----------------------HEADER----------------------------*/
 header {
     background: #C2EFEB;
@@ -128,26 +148,6 @@ main {
     padding: 0 2%;
 }
 
-main a {
-    text-decoration: none;
-    color: #331E36;
-}
-
-main a:visited {
-    color: #554a81;
-}
-
-/* note: a:hover must come AFTER a:visited to be effective */
-main a:hover {
-    color: #41337A;
-    background: #ecfee8;
-}
-
-/* note: a:active must come AFTER a:hover to be effective */
-main a:active {
-    color: #449CC8;
-}
-
 ul {
     list-style: square;
     padding: 0 3rem;
@@ -157,6 +157,20 @@ ul {
 ul li {
     padding: 0;
     margin-bottom: 0.3rem;
+}
+
+
+/*-----------FOOTER------------------*/
+footer {
+    margin-top: 3rem;
+    padding-bottom: 1rem;
+    background-color: #C2EFEB;
+    display: grid;
+    justify-items: center;
+}
+
+#updatetime {
+    color: #331e36;
 }
 
 
