@@ -167,6 +167,8 @@ footer {
     background-color: #C2EFEB;
     display: grid;
     justify-items: center;
+    text-align: center;
+    
 }
 
 #updatetime {
