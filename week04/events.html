@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="Matt Rushton portfolio of work done for WDD 330 Web Frontend Development 2">
+        <meta name="author" content="Matt Rushton">
+        <title>WDD 330 W04 Coding-Events | Matt Rushton</title> 
+        <link rel="shortcut icon" href="../favicon.ico">
+        <link rel="stylesheet" href="../css/small.css">
+        <link rel="stylesheet" href="../css/medium.css">
+        <style>
+          .event {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            background-color: #ccc;
+            float: left;
+          }
+          .highlight {
+            background-color: red;
+          }
+        </style>
+    </head>
+<body>
+    <header>
+        <h1>Matt Rushton</h1>
+        <h2>WDD 330 Portfolio</h2>
+        <h3>Winter Semester 2022</h3>
+    </header>
+    <nav class="clearfix">
+        <button onclick="toggleMenu()">Menu &#9776;</button>
+        <div class="mainnavigation">
+        <ul id="primaryNav" class="hide">
+                <li><a href="../index.html">Home</a></li>  
+            </ul>
+        </div>
+    </nav>
+  <main>
+    <h1>Event Samples</h1>
+    <p class="event" id="click">Click On Me</p>
+    <p class="event" id="dblclick">Double Click On Me</p>
+    <p class="event" id="mouse">Hover On Me</p>
+    <p class="event" id="once">A One Time Thing...</p>
+    <p class="event">
+      <a id="broken" href='https://sitepoint.com'>Broken Link (watch console for message)</a>
+    </p>
+      <ul class="event" id="list">
+        click on one, two, or three
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+      </ul>
+  </main>
+    <script src="../js/week04_events.js"></script>
+  </body>
+</html>

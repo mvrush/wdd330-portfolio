@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Matt Rushton portfolio Team Week 04 Assignment">
+        <meta name="author" content="Matt Rushton">
+    <title>Week 4 Team Activity - Tic Tac Toe | Matt Rushton
+    </title>
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../css/small.css">
+    <link rel="stylesheet" href="../../css/medium.css">
+    <link rel="stylesheet" href="teamWeek04.css">
+  </head>
+  <body>
+    <header>
+      <h1>Matt Rushton</h1>
+      <h2>WDD 330 Portfolio</h2>
+      <h3>Winter Semester 2022</h3>
+  </header>
+  <nav class="clearfix">
+      <button onclick="toggleMenu()">Menu &#9776;</button>
+      <div class="mainnavigation">
+      <ul id="primaryNav" class="hide">
+              <li><a href="../../index.html">Home</a></li>  
+          </ul>
+      </div>
+  </nav>
+  <main>
+    <h1>Tic Tac Toe</h1>
+    <table id="tic_tac_toe">
+        <tr id="row_one">  <!--First row of Tic Tac Toe boxes-->
+          <td class="box"></td>
+          <td class="box"></td>
+          <td class="box"></td>
+        </tr>
+        <tr id="row_two">  <!--Second row of Tic Tac Toe boxes-->
+          <td class="box"></td>
+          <td class="box"></td>
+          <td class="box"></td>        
+        </tr>
+        <tr id="row_three">  <!--Third row of Tic Tac Toe boxes-->
+          <td class="box"></td>
+          <td class="box"></td>
+          <td class="box"></td>        
+        </tr>
+      </table>
+    <button name="reset" type="button" onclick="reset()">RESET!</button>
+  </main>
+</body>
+<script src="teamWeek04.js"></script>
+</html>
