@@ -36,3 +36,8 @@
   #todoList li > button {
     flex: 0 0 30px;
   }
+
+  .delete {
+    float: right;
+    border: 1px solid red;
+  }
