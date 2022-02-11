@@ -41,3 +41,14 @@
     float: right;
     border: 1px solid red;
   }
+
+ #todoList {
+    border: 0 solid silver;
+    border-width: 0 0 1px 1px;
+}
+#todoList li{
+    border: 0 solid silver;
+    border-width: 1px 1px 0 0;
+    padding:.5em;
+    margin: 0;
+}
