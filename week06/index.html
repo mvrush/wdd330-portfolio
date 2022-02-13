@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="Matt Rushton portfolio of work done for WDD 330 Web Frontend Development 2">
+        <meta name="author" content="Matt Rushton">
+        <title>WDD 330 Week 06 ToDo | Matt Rushton</title> 
+        <link rel="shortcut icon" href="../favicon.ico">
+        <link rel="stylesheet" href="../css/small.css">
+        <link rel="stylesheet" href="../css/medium.css">
+        <link rel="stylesheet" href="./css/todo.css">
+    </head>
+<body>
+    <header>
+        <img src="../pictures/matt_rushton_profile.jpg" alt="Matt Rushton profile photograph">
+    <div class="header_text">
+        <h1>Matt Rushton</h1>
+        <h2>WDD 330 Portfolio</h2>
+        <h3>Winter Semester 2022</h3>
+    </div>
+    </header>
+    <nav class="clearfix">
+        <button onclick="toggleMenu()">Menu &#9776;</button>
+        <div class="mainnavigation">
+        <ul id="primaryNav" class="hide">
+                <li><a href="../index.html">Home</a></li>  
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <h1>WDD 330 Week 06</h1>
+        <h2>Notes:</h2>
+        <p>
+            I spent this entire week working on my ToDo App. I really struggled with this because I'm not well versed in JavaScript. I spent hours upon hours searching for solutions to the functionality that I needed. Because of this I fell behind on the CSS as well.
+            <br>
+        </p>
+        <p>
+            I will say that I learned more about JavaScript in the last two weeks than I have in my entire life. Because this project stretched my abilities so far, I really grew from it. It may not be the best ToDo app ever but at least it's mine and I really learned from it. If I can find more time I'll continue working on it.
+        </p>
+        <h1>ToDo's</h1>
+        <section>
+        <ul id="todoList"></ul>
+        <div>
+            <input class="tab" type="button" id="all" value="All">
+            <input class="tab" type="button" id="active" value="Active">
+            <input class="tab" type="button" id="complete" value="Completed">
+        </div>
+        </section>
+        <input type="text" id="todoInput" placeholder="Enter new ToDo Item" />
+        <button id="addToDo">Add Item</button>        
+    </main>
+    <footer>
+        <p>&copy; 2022 | Matt Rushton | <a href="https://mvrush.github.io/wdd330-portfolio/">WDD 330 Portfolio</a></p>
+        <div id="updatetime"></div>
+      </footer>
+    <script src="./js/index.js" type="module"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
