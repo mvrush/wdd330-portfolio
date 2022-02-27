@@ -3,25 +3,50 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta name="description" content="Detailed Star Wars Info">
+        <meta name="description" content="Matt Rushton portfolio of work done for WDD 330 Web Frontend Development 2">
         <meta name="author" content="Matt Rushton">
-        <title>Star Wars API Info | Matt Rushton</title>
+        <title>WDD 330 Week 08 | Matt Rushton</title> 
+        <link rel="shortcut icon" href="../../favicon.ico">
+        <link rel="stylesheet" href="../../css/small.css">
+        <link rel="stylesheet" href="../../css/medium.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="stylesheet" href="css/styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet"> 
     </head>
     <body>
         <header>
-            <h1>Star Wars Info</h1>
+            <img src="../../pictures/matt_rushton_profile.jpg" alt="Matt Rushton profile photograph">
+        <div class="header_text">
+            <h1>Matt Rushton</h1>
+            <h2>WDD 330 Portfolio</h2>
+            <h3>Winter Semester 2022</h3>
+        </div>
         </header>
-        <main>
+        <nav class="clearfix">
+            <button onclick="toggleMenu()">Menu &#9776;</button>
+            <div class="mainnavigation">
+            <ul id="primaryNav" class="hide">
+                    <li><a href="../../index.html">Home</a></li>  
+                </ul>
+            </div>
+        </nav>
+    <section class="starwars">
+        <div class="starWarsHeader">
+            <h1>Star Wars Info</h1>
+        </div>
+        <div class="starWarsMain">
             <div id="cards" class="cards"></div>
             <div id="buttons"></div>
-        </main>
-        <footer>
+        </div>
+        <div class="starWarsFooter">
             Matt Rushton | BYU-Idaho | WDD 330
-        </footer>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2022 | Matt Rushton | <a href="https://mvrush.github.io/wdd330-portfolio/">WDD 330 Portfolio</a></p>
+        <div id="updatetime"></div>
+    </footer>
             <script src="js/swapi.js" type="module"></script>
+            <script src="../../js/main.js"></script>
     </body>
 </html>

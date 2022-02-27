@@ -5,7 +5,7 @@
         <meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta name="description" content="Matt Rushton portfolio of work done for WDD 330 Web Frontend Development 2">
         <meta name="author" content="Matt Rushton">
-        <title>WDD 330 Week 07 | Matt Rushton</title> 
+        <title>WDD 330 Week 08 | Matt Rushton</title> 
         <link rel="shortcut icon" href="../favicon.ico">
         <link rel="stylesheet" href="../css/small.css">
         <link rel="stylesheet" href="../css/medium.css">
@@ -28,37 +28,54 @@
         </div>
     </nav>
     <main>
-        <h1>WDD 330 Week 07</h1>
+        <h1>WDD 330 Week 08</h1>
         <h2>Notes:</h2>
         <p>
-            I spent a bunch of time trying to create an event listener that would listen for a 'touchend' event and then fall back to 'click' for people who are using a mouse.
+            This week I really immersed myself in the reading. I found the usage of Canvas fascinating. It's interesting to me how we can manipulate pixels and even video with JavaScript. I found the code use Canvas to be surprisingly simple especially when compared with the code for SVG.
             <br>
         </p>
         <p>
-            I am still having a difficult time wrapping my mind around the concept of callbacks. The simple definition is, <b>"Callbacks are functions that are passed to other functions as arguments and then invoked inside the function they are passed to.</b>
+            For example, drawing a rectangle with a stroke and fill is as easy as the following code:
             <br>
-            Another thing I need to remember is that <b>callbacks facilitate asynchrounous programming</b> allowing our code to be run <i>out of order</i> so to speak.
-            <br>
-            A callback can be created that's invoked when an event happens. The event can be DOM events such as 'click' and 'keyPress', but they can also be events such as the completion of a file download, data returned from a database, or the result of a complex operation. By using callbacks, we ensure that waiting for these tasks to complete doesn't hold up the execution of other parts of the program. Once the task has been completed, the callback will be invoked before returning to the rest of the program.
-            <br>
+            In the HTML page we would use the code:<br>
+            <b>        &lt;canvas id="myCanvas" class="myCanvas" width="200" height="200">
+                Sorry! Your browser doesn't support Canvas. (If it did there would be a rectangle here).
+                &lt;/canvas></b>
         </p>
         <p>
-            I used asynchronous programming extensively in my Node.js course and I need to go back to that and look at some of those notes. I think the critical thing for me to practice is to think non-linearly. I tend to fall into the traditional program execution of one line at a time from top to bottom.
+            In the JavaScript file we sould then simply use the following code:<br>
+            <b>
+            var canvas = document.getElementById("myCanvas"); var context = canvas.getContext("2d");<br>
+            context.strokeStyle = "red";context.fillStyle = "rgba(0, 0, 255, 0.5)";<br>
+            context.fillRect(10, 10, 100, 100);<br>
+            context.strokeRect(10, 10, 100, 100);
+            </b>
+        <br>
+        </p>
+        <p>
+            Here it is in action:
+            <br>
+        </p>
+        <canvas id="myCanvas" class="myCanvas" width="150" height="150">
+            Sorry! Your browser doesn't support Canvas. (If it did there would be a rectangle here).
+        </canvas>
+        <p>
+            I also spent a lot of time working with the SWAPI api before, during and after the team assignment. I found that using Postman was an easy and convenient way to interact with the API to see what kind of data I would be working with.
+            <br>
         </p>
         <h3>Questions:</h3>
         <p>
-            The biggest question I have is how to create an event listener that listens for a 'touchend' event that falls back to 'click' for people using a mouse. I could not figure that one out.
-            <br>
-            The second part of this question is, why don't we just always use 'click' instead of 'touchend'? Doesn't it just function the same way on a touchscreen?
+            A question I had from this week's work concerns the async/await commands. I am not sure exactly how to incorporate them into my code for the API.
         </p>
         <br>
-        <h3>Team Assignment Week07:</h3>
-        <h4><a href="teamweek07/index.html">Link to Team Assignment Week07</a></h4>    
+        <h3>Team Assignment Week08:</h3>
+        <h4><a href="teamweek08/swapi.html">Link to Team Assignment Week08</a></h4>    
     </main>
     <footer>
         <p>&copy; 2022 | Matt Rushton | <a href="https://mvrush.github.io/wdd330-portfolio/">WDD 330 Portfolio</a></p>
         <div id="updatetime"></div>
       </footer>
+    <script src="canvas.js"></script>
     <script src="../js/main.js"></script>
 </body>
 

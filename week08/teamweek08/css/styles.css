@@ -1,12 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Oswald:wght@400;500;700&display=swap');
+
 @media only screen and (max-width: 600px) {
-  header {
-    font-family: 'Akaya Telivigala';
+  .starWarsHeader {
+    font-family: 'Akaya Telivigala', cursive;
   }
-  main, button {
-    font-family: 'Oswald';
+  .starWarsMain {
+    font-family: 'Oswald', sans-serif;
   }
-  body {
-    text-align: center;
+  .starWarsMain button {
+    font-family: 'Oswald', sans-serif;
+  }
+  .starwars {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;  
     background-color: rgba(176, 176, 176, 0.347);
   }
   button {
@@ -15,14 +21,19 @@
   }
 }
 @media only screen and (min-width: 600px) {
-  header {
-    font-family: 'Akaya Telivigala';
+  .starWarsHeader h1 {
+    font-family: 'Akaya Telivigala', cursive;
+    margin: 0;
   }
-  main, button {
-    font-family: 'Oswald';
+  .starWarsMain {
+    font-family: 'Oswald', sans-serif;
   }
-  body {
-    text-align: center;
+  .starWarsMain button {
+    font-family: 'Oswald', sans-serif;
+  }
+  .starwars {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;    
     background-color: rgba(176, 176, 176, 0.347);
   }
   button {
