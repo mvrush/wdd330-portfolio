@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Oswald:wght@400;500;700&display=swap');
 
 @media only screen and (max-width: 600px) {
-  .starWarsHeader {
+  .starWarsHeader h1 {
     font-family: 'Akaya Telivigala', cursive;
+    margin: 0;
   }
   .starWarsMain {
     font-family: 'Oswald', sans-serif;
@@ -15,9 +16,20 @@
     text-align: center;  
     background-color: rgba(176, 176, 176, 0.347);
   }
+
+    /* Had to add this max-width to the <p> tag to center in the middle of the screen. The <p> max-width is set to 65% in the css/medium.css file 
+    * which causes the <p> to not be able to center on the page properly in small or large screen sizes for the Star Wars app.
+    */
+    .starwars p {
+      max-width: 100%;
+    }
+
   button {
       margin: 1rem;
       padding: 0.5rem 1rem;
+  }
+  footer {
+    margin: 0;
   }
 }
 @media only screen and (min-width: 600px) {
@@ -45,5 +57,8 @@
   button {
     margin: 1rem;
     padding: 0.5rem 1rem;
+  }
+  footer {
+    margin: 0;
   }
 }
