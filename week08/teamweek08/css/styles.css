@@ -36,6 +36,12 @@
     text-align: center;    
     background-color: rgba(176, 176, 176, 0.347);
   }
+
+  /* Had to add this max-width to the <p> tag to center in the middle of the screen. The <p> max-width is set to 65% in the css/medium.css file */
+  .starwars p {
+    max-width: 100%;
+  }
+
   button {
     margin: 1rem;
     padding: 0.5rem 1rem;
