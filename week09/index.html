@@ -31,41 +31,26 @@
         <h1>WDD 330 Week 09</h1>
         <h2>Notes:</h2>
         <p>
-            This week I really immersed myself in the reading. I found the usage of Canvas fascinating. It's interesting to me how we can manipulate pixels and even video with JavaScript. I found the code use Canvas to be surprisingly simple especially when compared with the code for SVG.
+            This week we studied Chapter 9 "The Window Object" and Chapter 14 "HTML5 API's" from JavaScript: Novice to Ninja.
             <br>
         </p>
         <p>
-            For example, drawing a rectangle with a stroke and fill is as easy as the following code:
-            <br>
-            In the HTML page we would use the code:<br>
-            <b>        &lt;canvas id="myCanvas" class="myCanvas" width="200" height="200">
-                Sorry! Your browser doesn't support Canvas. (If it did there would be a rectangle here).
-                &lt;/canvas></b>
-        </p>
-        <p>
-            In the JavaScript file we sould then simply use the following code:<br>
-            <b>
-            var canvas = document.getElementById("myCanvas"); var context = canvas.getContext("2d");<br>
-            context.strokeStyle = "red";context.fillStyle = "rgba(0, 0, 255, 0.5)";<br>
-            context.fillRect(10, 10, 100, 100);<br>
-            context.strokeRect(10, 10, 100, 100);
-            </b>
-        <br>
-        </p>
-        <p>
-            Here it is in action:
+            I got a lot more information on localStorage from this chapter. To clear everything in localStorage you can use the <b>clear()</b> method. If you're working on a page using localStorage and you need to clear it quickly you can simply run <b>localStorage.clear()</b> from the browser console.
             <br>
         </p>
-        <canvas id="myCanvas" class="myCanvas" width="150" height="150">
-            Sorry! Your browser doesn't support Canvas. (If it did there would be a rectangle here).
-        </canvas>
         <p>
-            I also spent a lot of time working with the SWAPI api before, during and after the team assignment. I found that using Postman was an easy and convenient way to interact with the API to see what kind of data I would be working with.
+            Another note on localStorage is that it's tied to the domain that's calling it. That's how the browser knows which part of localStorage to load. It matches the domain to the area of localStorage tied to that domain.
             <br>
         </p>
+        <p>
+            Brother Chandler pointed out that Google Chrome records Web storage data in a SQLite file in the user's profile. The subfolder containing this file is " \AppData\Local\Google\Chrome\User Data\Default\Local Storage " on Windows, and " ~/Library/Application Support/Google/Chrome/Default/Local Storage " on macOS.
+            <br>
+        </p>
+        
+
         <h3>Questions:</h3>
         <p>
-            A question I had from this week's work concerns the async/await commands. I am not sure exactly how to incorporate them into my code for the API.
+            A question I had is: when using <b>clear()</b> on localStorage does it clear everything in localStorage? Or does it only clear the part of localStorage that is tied to the domain that issued the <b>clear()</b> function?
         </p>
         <br>
         <h3>Team Assignment Week09:</h3>
