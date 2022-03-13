@@ -1,24 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Local Quakes</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-
-  <body>
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="Matt Rushton portfolio of work done for WDD 330 Web Frontend Development 2">
+        <meta name="author" content="Matt Rushton">
+        <title>WDD 330 Week 10 | Matt Rushton</title> 
+        <link rel="shortcut icon" href="../../favicon.ico">
+        <link rel="stylesheet" href="../../css/small.css">
+        <link rel="stylesheet" href="../../css/medium.css">
+    </head>
+<body>
     <header>
-      <nav>
-        <heading>
-          <nav><ul id="quakesMainNav"></ul></nav>
-        </heading>
-      </nav>
+        <img src="../../pictures/matt_rushton_profile.jpg" alt="Matt Rushton profile photograph">
+    <div class="header_text">
+        <h1>Matt Rushton</h1>
+        <h2>WDD 330 Portfolio</h2>
+        <h3>Winter Semester 2022</h3>
+    </div>
     </header>
+    <nav class="clearfix">
+        <button onclick="toggleMenu()">Menu &#9776;</button>
+        <div class="mainnavigation">
+        <ul id="primaryNav" class="hide">
+                <li><a href="../index.html">Home</a></li>  
+            </ul>
+        </div>
+    </nav>
+      <div>
+        <heading>
+          <div><ul id="quakesMainNav"></ul></div>
+        </heading>
+      </div>
     <main id="content">
       <h1>Quake List</h1>
       <ul id="quakeList" class="hikeStyles"></ul>
     </main>
-
+    <footer>
+      <p>&copy; 2022 | Matt Rushton | <a href="https://mvrush.github.io/wdd330-portfolio/">WDD 330 Portfolio</a></p>
+      <div id="updatetime"></div>
+    </footer>
     <script src="js/index.js" type="module"></script>
+    <script src="../../js/main.js"></script>
   </body>
 </html>
