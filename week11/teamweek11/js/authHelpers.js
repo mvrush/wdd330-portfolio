@@ -2,7 +2,7 @@
 const baseURL = 'http://127.0.0.1:3000/';
 // helper function to make an http request with fetch.
 // returns a json object
-export async function makeRequest(url, method = 'GET', body = null) {
+export async function makeRequest(url, method = 'GET', body = null, token = null) { // a url is passed to the function. Default for method is 'GET', default for body and token is 'null' and will change as values are added.
   // we will need to set some custom options for our fetch call
     let options = {
     method: method,
@@ -13,6 +13,10 @@ export async function makeRequest(url, method = 'GET', body = null) {
   // if we are sending any data with the request add it here
   if (method == 'POST' || method == 'PUT') {
     options.body = JSON.stringify(body);
+  }
+  // if a token was passed in we should sent it on.
+  if (token) {
+    options.headers.Authorization = `Bearer ${token}`;
   }
   
   const response = await fetch(baseURL + url, options);
