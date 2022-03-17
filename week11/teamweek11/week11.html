@@ -12,8 +12,9 @@
     <main>
         <h1>Week11 Team Activity</h1>
         <h2>Login</h2>
+
+    <form class="login-form" onsubmit="login()" method="POST">
         <div class="form-control">
-        <form class="login-form" action="/login" method="POST">
             <label for="username">Username</label>
             <input type="text" name="username" id="username">
         </div>
@@ -22,7 +23,7 @@
             <input type="text" name="password" id="password">
             <button class="btn" type="submit">Login</button>
         </div>
-        </form>
+    </form>
 
     </main>
     <script src="./js/week11.js" type="module"></script>

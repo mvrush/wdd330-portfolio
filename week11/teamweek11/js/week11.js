@@ -2,7 +2,7 @@ import { makeRequest } from "./authHelpers.js"; // make sure you add the .js at 
 import Auth from "./auth.js";
 
 // passes 'login' as our url and 'POST' as our method to the 'makeRequest' function. Used for testing our connection to the server
-makeRequest('login', 'POST', {
-    password: 'user1',
-    email: 'user1@email.com'
-});
+// makeRequest('login', 'POST', {
+//     password: 'user1',
+//     email: 'user1@email.com'
+// });
