@@ -14,7 +14,7 @@ export async function makeRequest(url, method = 'GET', body = null, token = null
   if (method == 'POST' || method == 'PUT') {
     options.body = JSON.stringify(body);
   }
-  // if a token was passed in we should sent it on.
+  // if a token was passed in we should send it on.
   if (token) {
     options.headers.Authorization = `Bearer ${token}`;
   }

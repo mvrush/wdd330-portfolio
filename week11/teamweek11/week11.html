@@ -6,10 +6,23 @@
         <meta name="description" content="Matt Rushton portfolio of work done for WDD 330 Web Frontend Development 2">
         <meta name="author" content="Matt Rushton">
         <title>WDD 330 Team Week 11 | Matt Rushton</title> 
+        <link rel="stylesheet" href="./css/styles.css">
     </head>
 <body>
     <main>
         <h1>Week11 Team Activity</h1>
+        <h2>Login</h2>
+        <div class="form-control">
+        <form class="login-form" action="/login" method="POST">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username">
+        </div>
+        <div class="form-control">
+            <label for="password">Password</label>
+            <input type="text" name="password" id="password">
+            <button class="btn" type="submit">Login</button>
+        </div>
+        </form>
 
     </main>
     <script src="./js/week11.js" type="module"></script>
