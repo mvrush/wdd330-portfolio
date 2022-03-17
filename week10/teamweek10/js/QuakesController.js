@@ -1,3 +1,4 @@
+// make sure you add the .js at the end of javascript files to avoid "blocked because of disallowed MIME type" message.
 import { getLocation } from './utilities.js';
 import Quake from './quake.js';
 import QuakesView from './QuakesView.js';
