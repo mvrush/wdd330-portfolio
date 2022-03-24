@@ -39,6 +39,10 @@ const links = [
     {
         label: "Week10 notes",
         url: "week10/index.html"
+    },
+    {
+        label: "Block 2 Challenge",
+        url: "week12/index.html"
     }
 ]
 for(var i=0; i<links.length; i++) {
