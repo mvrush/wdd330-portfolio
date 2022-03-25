@@ -34,32 +34,16 @@
             <label for="search">Search Pokemon</label>
             <input type="search" id="search">
         </div>
-        <div class="user-cards">
+        <div class="user-cards" data-user-cards-container></div>
+        <!-- Template html does not show up on the page but we can use it in our JavaScript
+            data-user-template, data-header, data-body are attributes of those tags that can be addressed in JavaScript.
+            You can get to them using the JavaScript querySelector -->
+        <template data-user-template>
             <div class="card">
-                <div class="header">My Name</div>
-                <div class="body">email@gmail.com</div>
+                <div class="header" data-header></div>
+                <div class="body" data-body></div>
             </div>
-            <div class="card">
-                <div class="header">My Name</div>
-                <div class="body">email@gmail.com</div>
-            </div>
-            <div class="card">
-                <div class="header">My Name</div>
-                <div class="body">email@gmail.com</div>
-            </div>
-            <div class="card">
-                <div class="header">My Name</div>
-                <div class="body">email@gmail.com</div>
-            </div>
-            <div class="card">
-                <div class="header">My Name</div>
-                <div class="body">email@gmail.com</div>
-            </div>
-            <div class="card">
-                <div class="header">My Name</div>
-                <div class="body">email@gmail.com</div>
-            </div>
-        </div>
+        </template>
     </main>
     <footer>
         <p>&copy; 2022 | Matt Rushton | <a href="https://mvrush.github.io/wdd330-portfolio/">WDD 330 Portfolio</a></p>
