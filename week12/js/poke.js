@@ -1,7 +1,17 @@
-const userCardTemplate = document.querySelector("[data-user-template"); // looks at our html, queries the selector which is a <div> tag attribute, 'data-user-template' and puts that in our 'userCardTemplate' const.
-const userCardContainer = document.querySelector("[data-user-cards-container]"); // looks at our html, queries the selector which is a <div> tag attribute, 'data-user-cards-container' and creates the userCardContainer const.
-// console.log("this is our userCardTemplate const ->", userCardTemplate);
-console.log("this is our userCardContainer const ->", userCardContainer);
+const userCardTemplate = document.querySelector("[data-user-template"); // looks at our html, queries the selector which is a <div> tag attribute, 'data-user-template', and puts that in our 'userCardTemplate' const.
+const userCardContainer = document.querySelector("[data-user-cards-container]"); // looks at our html, queries the selector which is a <div> tag attribute, 'data-user-cards-container', and creates the userCardContainer const.
+const searchInput = document.querySelector("[data-search]"); // looks at our html, queries the selector which is an <input> tag attribute, 'data-search', and creates the searchInput const.
+
+// console.log("this is our userCardTemplate const ->", userCardTemplate); // looks at our userCardTemplate const.
+console.log("this is our userCardContainer const ->", userCardContainer); // looks at our userCardContainer const.
+
+let users = []; // this will be used to create a 'users' object that we will loop through. Here we create an empty 'users' array.
+
+// I add an event listener to the 'searchInput' const. Everytime a letter of space is typed into id="input" the listener hears it.
+searchInput.addEventListener("input", (e) => {
+    const value = e.target.value; // this looks at the 'value' of our 'target' event which is 'e' and stores it in the 'value' const.
+    console.log("this is our 'value' const ->", value); // this checks to see if our event listener is listening to what's entered into our search input.
+})
 
 fetch("https://jsonplaceholder.typicode.com/users") // uses fetch() to call our API
 .then(res => res.json()) // recieves a response which it then uses an arrow function to convert to json using json()
