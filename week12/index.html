@@ -33,13 +33,13 @@
             You can get to them using the JavaScript querySelector -->
         <h1>Pokemon Explorer</h1>
         <div class="search-wrapper">
-            <label for="search">Search Pokemon</label>
+            <label for="search">Enter A Name Or A Few Letters To Search Pokemon</label>
             <input type="search" id="search" data-search>
         </div>
-        <div class="user-cards" data-user-cards-container></div>
+        <div class="user-cards" data-poke-cards-container></div>
         <!-- Template html does not show up on the page but we can use it in our JavaScript -->        
-        <template data-user-template>
-            <div class="card">
+        <template data-poke-template>
+            <div class="card hide">
                 <div class="header" data-header></div>
                 <div class="body" data-body></div>
             </div>
