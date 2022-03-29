@@ -32,7 +32,7 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=1126") // uses fetch() to call ou
     const header = card.querySelector("[data-header]"); // this is looking in our 'card' const. It is looking for the 'data-header' attribute listed in that <div> tag.   
     const body = card.querySelector("[data-body]"); // this is looking in our 'card' const. It is looking for the 'data-body' attribute listed in that <div> tag.
     header.textContent = poke.name; // this looks at our 'poke' object and gets the 'name'. It then stores it as 'textContent' and appends that to the 'header' const using the (.)
-    body.textContent = poke.url;  // this looks at our 'poke' object and gets the 'email'. It then stores it as 'textContent' and appends that to the 'header' const using the (.)
+    body.innerHTML = `<a href="${poke.url}">${poke.name} Info</a>`;  // this looks at our 'poke' object and gets the 'email'. It then stores it as 'textContent' and appends that to the 'header' const using the (.)
         // another way to say what's happening in the previous two lines is that it's looking at the 'header' or 'body' and appending the 'textContent' to that and the textContent = the 'name' or 'email' found in the 'poke' object.
     pokeCardContainer.append(card); // This appends each card to our <div data-poke-cards-container> held in our 'pokeCardContainer' const.
     // console.log("this is our 'data' ->", data); // logs our data that we received from the API which was turned into JSON data.

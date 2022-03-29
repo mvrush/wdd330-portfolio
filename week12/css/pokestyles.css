@@ -22,10 +22,12 @@ input {
 }
 
 .card > .header {
+    text-transform: capitalize; /* capitlizes the first letter of each word even if word occurs after hyphen (Chrome only. Firefox doesn't capitlize after hyphen) */
     margin-bottom: .25rem;
 }
 
 .card > .body {
+    text-transform: capitalize; /* capitlizes the first letter of each word even if word occurs after hyphen (Chrome only. Firefox doesn't capitlize after hyphen) */
     font-size: .8rem;
     color: #777
 }
