@@ -1,6 +1,7 @@
 const pokeCardTemplate = document.querySelector("[data-poke-template"); // looks at our html, queries the selector which is a <div> tag attribute, 'data-poke-template', and puts that in our 'pokeCardTemplate' const.
 const pokeCardContainer = document.querySelector("[data-poke-cards-container]"); // looks at our html, queries the selector which is a <div> tag attribute, 'data-poke-cards-container', and creates the pokeCardContainer const.
 const searchInput = document.querySelector("[data-search]"); // looks at our html, queries the selector which is an <input> tag attribute, 'data-search', and creates the searchInput const.
+const detailUrl = document.querySelector("[data-url"); // looks at our html, queries the selector which is in our pokemon url anchor <a> tag and pulls out the url to put in the detailUrl const.
 
 // console.log("this is our pokeCardTemplate const ->", pokeCardTemplate); // looks at our pokeCardTemplate const.
 console.log("this is our pokeCardContainer const ->", pokeCardContainer); // looks at our pokeCardContainer const.
@@ -13,14 +14,14 @@ searchInput.addEventListener("input", (e) => {
     console.log("this is our 'value' const ->", value); // this checks to see if our event listener is listening to what's entered into our search input.
     console.log("this is our 'pokemon' array created from our data.map() loop ->", pokemon); // YOU CAN ONLY SEE THIS LOG AFTER TYPING INTO THE SEARCH BOX. It populates the 'pokemon' array with the object returned from the .then(data) arrow function of our API call. It has the 'name', 'email' and 'element' returned for all the pokemon.
     pokemon.forEach(poke => {
-        const isVisible = poke.name.toLowerCase().includes(value) || poke.url.toLowerCase().includes(value); // simply checks the poke typed 'value' created from our event listener and if it matches the poke name or url (converted to lower case using 'toLowerCase()'), it puts 'true' in the 'isVisible' const. So as soon as it detects a match, it changes to 'true'.
+        const isVisible = poke.name.toLowerCase().includes(value); // simply checks the poke typed 'value' created from our event listener and if it matches the poke name or url (converted to lower case using 'toLowerCase()'), it puts 'true' in the 'isVisible' const. So as soon as it detects a match, it changes to 'true'. To add more parameters I could use ' || poke.url.toLowerCase().includes(value); '
         poke.element.classList.toggle("hide", !isVisible || value===""); // this line says; If 'isVisible' is false ('!isVisible') OR (||) const 'value' IS EQUAL (===) to an empty string (""), toggle the "hide" class using the 'classList' method that adds a class to the list of classes on that 'element' which is our poke card passed back up as the value of 'element' in our returned object from below.
     })
 })
 
 // https://pokeapi.co/api/v2/pokemon?limit=100&offset=200
 // https://pokeapi.co/api/v2/pokemon
-fetch("https://pokeapi.co/api/v2/pokemon?limit=1126") // uses fetch() to call our API
+fetch("https://pokeapi.co/api/v2/pokemon?limit=1126") // uses fetch() to call our API. I set the limit to all available pokemon
  .then(res => res.json()) // recieves a response which it then uses an arrow function to convert to json using json()
  // .then(data => console.log("This is the API data we recieved ->", data))  // used to test whether we got our data back.
     .then(data => {     // Then takes that json() which is filled with our 'data' from the API. We use arrow functions to manipulate the data.
@@ -32,7 +33,7 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=1126") // uses fetch() to call ou
     const header = card.querySelector("[data-header]"); // this is looking in our 'card' const. It is looking for the 'data-header' attribute listed in that <div> tag.   
     const body = card.querySelector("[data-body]"); // this is looking in our 'card' const. It is looking for the 'data-body' attribute listed in that <div> tag.
     header.textContent = poke.name; // this looks at our 'poke' object and gets the 'name'. It then stores it as 'textContent' and appends that to the 'header' const using the (.)
-    body.innerHTML = `<a href="${poke.url}">${poke.name} Info</a>`;  // this looks at our 'poke' object and gets the 'email'. It then stores it as 'textContent' and appends that to the 'header' const using the (.)
+    body.innerHTML = `<a href="${poke.url}" data-url>${poke.name} Info</a>`;  // this looks at our 'poke' object and gets the 'email'. It then stores it as 'textContent' and appends that to the 'header' const using the (.)
         // another way to say what's happening in the previous two lines is that it's looking at the 'header' or 'body' and appending the 'textContent' to that and the textContent = the 'name' or 'email' found in the 'poke' object.
     pokeCardContainer.append(card); // This appends each card to our <div data-poke-cards-container> held in our 'pokeCardContainer' const.
     // console.log("this is our 'data' ->", data); // logs our data that we received from the API which was turned into JSON data.
@@ -41,4 +42,35 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=1126") // uses fetch() to call ou
     // console.log("this is what's in the 'body' const ->", body);
     return { name: poke.name, url: poke.url, element: card} // here we return an object. This object conatins our poke name, poke email, and the card element.
     })
-})   
+})
+
+fetch("https://pokeapi.co/api/v2/pokemon/6")
+    .then(res => res.json())
+    .then(data => console.log("this is our single pokemon API data", data));
+
+
+
+// // this block fetches our code for an individual pokemon.
+// const requestURL = 'https://swapi.dev/api/people/'; // assigns this URL to our API (SWAPI) to the 'requestURL' const
+
+// getData(requestURL); // uses the 'getData()' function with the 'requestURL' const to get our JSON data. It passes the 'requestURL' to the 'getData()' function below
+
+// function getData(url) { // uses the 'getData()' function with whatever 'url' is passed to it. We pass the URL for 'next' and 'previos' pages after the initial load of the API URL from above.
+//     fetch(url) // uses the 'fetch()' function on our 'url' to request the actual data from the API
+// .then(function (response) { // attaches the .then() function and I create an anonymous function that holds the 'response' from our API with all our data
+//   return response.json(); // it converts our 'response' to JSON data using the 'json()' function and returns it to our 'response' parameter in our anonymous function which then passes it to the next .then block (I think...)
+//   })
+// .then(function (jsonObject) {
+//     console.table(jsonObject); // checks for a valid response by showing the response data in a console table. (look in Browser Console).
+//     let previous = jsonObject['previous']; // looks at our 'jsonObject' and pulls the URL for 'previous' and assigns it to an array which it stores in the 'previous' variable.
+//     let next = jsonObject['next']; // looks at our 'jsonObject' and pulls the URL for 'next' and assigns it to an array which it stores in the 'next' variable.
+
+//     console.log("this is our previous data ->", previous); // simply console logs the value of the 'next' variable.
+//     console.log("this is our next data ->", next); // simply console logs the value of the 'next' variable.
+    
+//     const people = jsonObject['results']; // stores the results of the response in an array named 'people', in this case named 'results' (but it could be named anything, so always check your response table for naming).
+//     console.table(people); // shows the array in a table in the Browser Console which is handy for finding the index and Key: Value, of things.
+//     // document.getElementById("cards").innerHTML = people[0].name + ', ' + 'Eye Color - ' + people[0].eye_color; // This line is a simple way to access parts of our array and display them to the DOM using the 'cards' id to output.
+//     displayPage(people, next, previous); // This passes 'people', 'next' and 'previous' to our 'displayPage()' function.
+// });
+// }
