@@ -1,5 +1,7 @@
 const pokeCardTemplate = document.querySelector("[data-poke-template"); // looks at our html, queries the selector which is a <div> tag attribute, 'data-poke-template', and puts that in our 'pokeCardTemplate' const.
 const pokeCardContainer = document.querySelector("[data-poke-cards-container]"); // looks at our html, queries the selector which is a <div> tag attribute, 'data-poke-cards-container', and creates the pokeCardContainer const.
+const pokeSingleTemplate = document.querySelector("[data-poke-single-template]");
+const pokeSingleContainer = document.querySelector("[data-poke-single-container]"); //// looks at our html, queries the selector which is a <div> tag attribute, 'data-poke-single-container', and creates the pokeSingleContainer const.
 const searchInput = document.querySelector("[data-search]"); // looks at our html, queries the selector which is an <input> tag attribute, 'data-search', and creates the searchInput const.
 
 // console.log("this is our pokeCardTemplate const ->", pokeCardTemplate); // looks at our pokeCardTemplate const.
@@ -13,7 +15,7 @@ searchInput.addEventListener("input", (e) => {
     console.log("this is our 'value' const ->", value); // this checks to see if our event listener is listening to what's entered into our search input.
     console.log("this is our 'pokemon' array created from our data.map() loop ->", pokemon); // YOU CAN ONLY SEE THIS LOG AFTER TYPING INTO THE SEARCH BOX. It populates the 'pokemon' array with the object returned from the .then(data) arrow function of our API call. It has the 'name', 'email' and 'element' returned for all the pokemon.
     pokemon.forEach(poke => {
-        const isVisible = poke.name.toLowerCase().includes(value); // simply checks the poke typed 'value' created from our event listener and if it matches the poke name or url (converted to lower case using 'toLowerCase()'), it puts 'true' in the 'isVisible' const. So as soon as it detects a match, it changes to 'true'. To add more parameters I could use ' || poke.url.toLowerCase().includes(value); '
+        const isVisible = poke.name.toLowerCase().includes(value); // simply checks the poke typed 'value' created from our event listener and if it matches the poke name (converted to lower case using 'toLowerCase()'), it puts 'true' in the 'isVisible' const. So as soon as it detects a match, it changes to 'true'. To add more parameters I could use ' || poke.url.toLowerCase().includes(value); '
         poke.element.classList.toggle("hide", !isVisible || value===""); // this line says; If 'isVisible' is false ('!isVisible') OR (||) const 'value' IS EQUAL (===) to an empty string (""), toggle the "hide" class using the 'classList' method that adds a class to the list of classes on that 'element' which is our poke card passed back up as the value of 'element' in our returned object from below.
     })
 })
@@ -32,13 +34,13 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=1126") // uses fetch() to call ou
     const header = card.querySelector("[data-header]"); // this is looking in our 'card' const. It is looking for the 'data-header' attribute listed in that <div> tag.   
     const body = card.querySelector("[data-body]"); // this is looking in our 'card' const. It is looking for the 'data-body' attribute listed in that <div> tag.
     header.textContent = poke.name; // this looks at our 'poke' object and gets the 'name'. It then stores it as 'textContent' and appends that to the 'header' const using the (.)
-    // body.innerHTML = `<a href="${poke.url}" data-url>${poke.name} Info</a>`;  // this injects some HTML into the body of our template.
+    // The following injects the HTML form into the card body using the 'innerHTML' method
     body.innerHTML = `
         <form action="javascript:singleData('${poke.url}')">
-            <button class="btn" type="submit">Pokemon Info</button>
+            <button class="btn" type="submit">Add Pok&eacute;mon</button>
         </form>
     `
-        // another way to say what's happening in the previous two lines is that it's looking at the 'header' or 'body' and appending the 'textContent' or 'innerHTML' to that and the textContent = the 'name' or 'url' found in the 'poke' object.
+        // another way to say what's happening in the previous 'header.' and 'body.' lines is that it's looking at the 'header' or 'body' of our card and appending the 'textContent' or 'innerHTML' to that. The textContent or innerHTML uses the 'name' or 'url' found in the 'poke' object.
     pokeCardContainer.append(card); // This appends each card to our <div data-poke-cards-container> held in our 'pokeCardContainer' const.
     // console.log("this is our 'data' ->", data); // logs our data that we received from the API which was turned into JSON data.
     // console.log("this is each 'poke' from our 'data' created with the 'forEach()' loop ->", poke);
@@ -55,9 +57,10 @@ fetch(url)
     // .then(data => console.log("this is our single pokemon API data", data)); // This is to test our response.
         .then(data => {
             console.log("this is our single pokemon API data", data);
-            const header = document.querySelector("[single-header]");
-            const body = document.querySelector("[single-body]");
-            header.textContent = data.name;
+            const singleCard = pokeSingleTemplate.content.cloneNode(true).children[0]; // 'cloneNode(true)' clones all 'content' in the 'pokeSingleTemplate' const. We then specify the first child node 'children[0]' and store it in the 'singleCard' const
+            const header = singleCard.querySelector("[single-header]");
+            const body = singleCard.querySelector("[single-body]");
+            header.innerHTML = `<h3>${data.name}</h3>`;
             body.innerHTML = `
                 <img src="${data.sprites.front_default}" alt="picture of ${data.name}">
                 <li>Species: ${data.species.name}</li>
@@ -65,8 +68,13 @@ fetch(url)
                 <li>Weight: ${data.weight} Lbs.</li>
                 <li>Base Experience: ${data.base_experience}</li>
                 `
+            pokeSingleContainer.append(singleCard); // This appends each card to our <div data-poke-single-container> held in our 'pokeCardContainer' const.
         });
     }
+
+function clearPokes(elementID) {
+    document.getElementById(elementID).innerHTML="";
+}
 
 
 

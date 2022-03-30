@@ -4,8 +4,52 @@
     gap: .25rem;
 }
 
+label {
+    font-size: 1.25rem;
+}
+
 input {
     font-size: 1rem;
+    width: 75%;
+    max-width: 400px;
+    border: 2px solid silver;
+    box-shadow: 0px 0px 8px #888888;
+}
+
+.reset-div {
+    margin-top: 1rem;
+    text-align: right;
+}
+
+.single-display {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* makes is so the cards fill the width of the screen and auto-size to columns on small screens */
+    gap: .25rem;
+    margin-top: 1rem;
+}
+
+.single-header {
+    text-transform: capitalize; /* capitlizes the first letter of each word even if word occurs after hyphen (Chrome only. Firefox doesn't capitlize after hyphen) */
+    margin: 0;
+    padding: 0;
+}
+
+.single-info {
+    text-transform: capitalize; /* capitlizes the first letter of each word even if word occurs after hyphen (Chrome only. Firefox doesn't capitlize after hyphen) */
+    width: fit-content;
+    padding: 1rem;
+    margin: 1rem;
+    border: 1px solid black;
+    box-shadow: 0px 0px 8px #888888;
+}
+
+.single-info img {
+    width: 100%;
+}
+
+.single-info li {
+    font-weight: 600;
+    margin-left: .5rem;
 }
 
 .user-cards {
@@ -23,7 +67,7 @@ input {
 
 .card > .header {
     text-transform: capitalize; /* capitlizes the first letter of each word even if word occurs after hyphen (Chrome only. Firefox doesn't capitlize after hyphen) */
-    margin-bottom: .25rem;
+    margin-bottom: 1rem;
 }
 
 .card > .body {
@@ -35,3 +79,4 @@ input {
 .hide {
     display: none;
 }
+

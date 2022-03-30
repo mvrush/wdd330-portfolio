@@ -31,25 +31,24 @@
     <main>
         <!-- NOTE data-search, data-user-template, data-header, data-body are attributes of their respective tags that can be addressed in JavaScript.
             You can get to them using the JavaScript querySelector -->
-        <h1>Pokemon Explorer</h1>
+        <h1>Pok&eacute;mon Explorer</h1>
         <div class="search-wrapper">
-            <label for="search">Enter A Name Or A Few Letters To Search Pokemon</label>
+            <label for="search">Enter A Name Or A Few Letters To Search Pok&eacute;mon</label>
             <input type="search" id="search" data-search>
         </div>
-        <div class="single-info">
-            <div class="single-header" single-header></div>
-            <div class="single-body" single-body></div>
+        <div class="reset-div">
+        <button onclick="clearPokes('singleDisplay')" class="btn">Reset Deck</button>
         </div>
-        <div class="user-cards" data-poke-cards-container></div>
+        <div class="single-display" id="singleDisplay" data-poke-single-container></div>
+        <div class="user-cards" id="userCards" data-poke-cards-container></div>
         <!-- Template html does not show up on the page but we can use it in our JavaScript -->        
         <template data-poke-template>
             <div class="card hide">
                 <div class="header" data-header></div>
-            <!-- <ul class="body" data-body></ul> -->
                 <div class="body" data-body></div>
             </div>
         </template>
-        <template single-poke-template>
+        <template data-poke-single-template>
             <div class="single-info">
                 <div class="single-header" single-header></div>
                 <div class="single-body" single-body></div>
