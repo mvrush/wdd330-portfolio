@@ -1,7 +1,6 @@
 const pokeCardTemplate = document.querySelector("[data-poke-template"); // looks at our html, queries the selector which is a <div> tag attribute, 'data-poke-template', and puts that in our 'pokeCardTemplate' const.
 const pokeCardContainer = document.querySelector("[data-poke-cards-container]"); // looks at our html, queries the selector which is a <div> tag attribute, 'data-poke-cards-container', and creates the pokeCardContainer const.
 const searchInput = document.querySelector("[data-search]"); // looks at our html, queries the selector which is an <input> tag attribute, 'data-search', and creates the searchInput const.
-const detailUrl = document.querySelector("[data-url"); // looks at our html, queries the selector which is in our pokemon url anchor <a> tag and pulls out the url to put in the detailUrl const.
 
 // console.log("this is our pokeCardTemplate const ->", pokeCardTemplate); // looks at our pokeCardTemplate const.
 console.log("this is our pokeCardContainer const ->", pokeCardContainer); // looks at our pokeCardContainer const.
@@ -33,8 +32,13 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=1126") // uses fetch() to call ou
     const header = card.querySelector("[data-header]"); // this is looking in our 'card' const. It is looking for the 'data-header' attribute listed in that <div> tag.   
     const body = card.querySelector("[data-body]"); // this is looking in our 'card' const. It is looking for the 'data-body' attribute listed in that <div> tag.
     header.textContent = poke.name; // this looks at our 'poke' object and gets the 'name'. It then stores it as 'textContent' and appends that to the 'header' const using the (.)
-    body.innerHTML = `<a href="${poke.url}" data-url>${poke.name} Info</a>`;  // this looks at our 'poke' object and gets the 'email'. It then stores it as 'textContent' and appends that to the 'header' const using the (.)
-        // another way to say what's happening in the previous two lines is that it's looking at the 'header' or 'body' and appending the 'textContent' to that and the textContent = the 'name' or 'email' found in the 'poke' object.
+    // body.innerHTML = `<a href="${poke.url}" data-url>${poke.name} Info</a>`;  // this injects some HTML into the body of our template.
+    body.innerHTML = `
+        <form action="javascript:singleData('${poke.url}')">
+            <button class="btn" type="submit">Pokemon Info</button>
+        </form>
+    `
+        // another way to say what's happening in the previous two lines is that it's looking at the 'header' or 'body' and appending the 'textContent' or 'innerHTML' to that and the textContent = the 'name' or 'url' found in the 'poke' object.
     pokeCardContainer.append(card); // This appends each card to our <div data-poke-cards-container> held in our 'pokeCardContainer' const.
     // console.log("this is our 'data' ->", data); // logs our data that we received from the API which was turned into JSON data.
     // console.log("this is each 'poke' from our 'data' created with the 'forEach()' loop ->", poke);
@@ -44,9 +48,25 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=1126") // uses fetch() to call ou
     })
 })
 
-fetch("https://pokeapi.co/api/v2/pokemon/6")
+function singleData(url) {
+// fetch("https://pokeapi.co/api/v2/pokemon/10034") // Use this line for testing in place of fetch(url)
+fetch(url)
     .then(res => res.json())
-    .then(data => console.log("this is our single pokemon API data", data));
+    // .then(data => console.log("this is our single pokemon API data", data)); // This is to test our response.
+        .then(data => {
+            console.log("this is our single pokemon API data", data);
+            const header = document.querySelector("[single-header]");
+            const body = document.querySelector("[single-body]");
+            header.textContent = data.name;
+            body.innerHTML = `
+                <img src="${data.sprites.front_default}" alt="picture of ${data.name}">
+                <li>Species: ${data.species.name}</li>
+                <li>Height: ${data.height}'</li>
+                <li>Weight: ${data.weight} Lbs.</li>
+                <li>Base Experience: ${data.base_experience}</li>
+                `
+        });
+    }
 
 
 
