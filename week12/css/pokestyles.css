@@ -22,7 +22,7 @@ input {
 
 .single-display {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* makes is so the cards fill the width of the screen and auto-size to columns on small screens */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* makes is so the cards fill the width of the screen and auto-size to columns on small screens */
     gap: .25rem;
     margin-top: 1rem;
 }
@@ -35,7 +35,7 @@ input {
 
 .single-info {
     text-transform: capitalize; /* capitlizes the first letter of each word even if word occurs after hyphen (Chrome only. Firefox doesn't capitlize after hyphen) */
-    width: fit-content;
+    width: 90%;
     padding: 1rem;
     margin: 1rem;
     border: 1px solid black;
