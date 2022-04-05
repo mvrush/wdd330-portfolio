@@ -33,7 +33,7 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=1126") // uses fetch() to call ou
     // console.log("this is our 'card' const", card);
     const header = card.querySelector("[data-header]"); // this is looking in our 'card' const. It is looking for the 'data-header' attribute listed in that <div> tag.   
     const body = card.querySelector("[data-body]"); // this is looking in our 'card' const. It is looking for the 'data-body' attribute listed in that <div> tag.
-    header.textContent = poke.name; // this looks at our 'poke' object and gets the 'name'. It then stores it as 'textContent' and appends that to the 'header' const using the (.)
+    header.innerHTML = `<h3>${poke.name}</h3>`; // this looks at our 'poke' object and gets the 'name'. It then stores it as 'innerHTML' and appends that to the 'header' const using the (.)
     // The following injects the HTML form into the card body using the 'innerHTML' method
     body.innerHTML = `
         <form action="javascript:singleData('${poke.url}');removeHide()">
@@ -72,23 +72,22 @@ fetch(url)
         });
     }
 
-// This function clears everthing from the specified element. Gets the element from our button in the html that calls the function.
 function clearPokes(elementID) {
-    document.getElementById(elementID).innerHTML="";
-}
-
-
+        document.getElementById(elementID).innerHTML="";
+    }
+    
+    // this function removes the hide class from our reset button when a pokemon card is added to the deck. It's attached to the 'Add Pokemon' button created on each card.
 function removeHide() {
-    let element = document.getElementById("resetBtn");
-    element.classList.remove("hide");
-
-}
-
+        let element = document.getElementById("resetBtn");
+        element.classList.remove("hide");
+    
+    }
+    
+    // this function adds the hide class to our reset button when the 'Reset Deck' button is pressed. It's attached to that button.
 function addHide() {
-    let element = document.getElementById("resetBtn");
-    element.classList.add("hide");
-}
-
+        let element = document.getElementById("resetBtn");
+        element.classList.add("hide");
+    }
 
 
 // // this block fetches our code for an individual pokemon.
