@@ -36,7 +36,7 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=1126") // uses fetch() to call ou
     header.textContent = poke.name; // this looks at our 'poke' object and gets the 'name'. It then stores it as 'textContent' and appends that to the 'header' const using the (.)
     // The following injects the HTML form into the card body using the 'innerHTML' method
     body.innerHTML = `
-        <form action="javascript:singleData('${poke.url}')">
+        <form action="javascript:singleData('${poke.url}');removeHide()">
             <button class="btn" type="submit">Add Pok&eacute;mon</button>
         </form>
     `
@@ -72,8 +72,21 @@ fetch(url)
         });
     }
 
+// This function clears everthing from the specified element. Gets the element from our button in the html that calls the function.
 function clearPokes(elementID) {
     document.getElementById(elementID).innerHTML="";
+}
+
+
+function removeHide() {
+    let element = document.getElementById("resetBtn");
+    element.classList.remove("hide");
+
+}
+
+function addHide() {
+    let element = document.getElementById("resetBtn");
+    element.classList.add("hide");
 }
 
 

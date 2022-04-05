@@ -37,7 +37,7 @@
             <input type="search" id="search" placeholder="enter query..." data-search>
         </div>
         <div class="reset-div">
-        <button onclick="clearPokes('singleDisplay')" class="btn">Reset Deck</button>
+        <button onclick="clearPokes('singleDisplay');addHide()" class="btn hide" id="resetBtn">Reset Deck</button>
         </div>
         <div class="single-display" id="singleDisplay" data-poke-single-container></div>
         <div class="user-cards" id="userCards" data-poke-cards-container></div>
