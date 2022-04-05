@@ -54,7 +54,7 @@ function singleData(url) {
 // fetch("https://pokeapi.co/api/v2/pokemon/10034") // Use this line for testing in place of fetch(url)
 fetch(url)
     .then(res => res.json())
-    // .then(data => console.log("this is our single pokemon API data", data)); // This is to test our response
+    // .then(data => console.log("this is our single pokemon API data", data)); // This is to test our response.
         .then(data => {
             console.log("this is our single pokemon API data", data);
             const singleCard = pokeSingleTemplate.content.cloneNode(true).children[0]; // 'cloneNode(true)' clones all 'content' in the 'pokeSingleTemplate' const. We then specify the first child node 'children[0]' and store it in the 'singleCard' const
@@ -71,6 +71,7 @@ fetch(url)
             pokeSingleContainer.append(singleCard); // This appends each card to our <div data-poke-single-container> held in our 'pokeCardContainer' const.
         });
     }
+
 
 function clearPokes(elementID) {
         document.getElementById(elementID).innerHTML="";

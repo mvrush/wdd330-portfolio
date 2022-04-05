@@ -53,9 +53,10 @@ input {
 
 .user-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* makes is so the cards fill the width of the screen and auto-size to columns on small screens */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* makes is so the cards fill the width of the screen and auto-size to columns on small screens */
     gap: .25rem;
     margin-top: 1rem;
+    text-align: center;
 }
 
 .card {
