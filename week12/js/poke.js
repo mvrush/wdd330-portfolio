@@ -58,8 +58,10 @@ fetch(url)
         .then(data => {
             console.log("this is our single pokemon API data", data);
             const singleCard = pokeSingleTemplate.content.cloneNode(true).children[0]; // 'cloneNode(true)' clones all 'content' in the 'pokeSingleTemplate' const. We then specify the first child node 'children[0]' and store it in the 'singleCard' const
-            const header = singleCard.querySelector("[single-header]");
-            const body = singleCard.querySelector("[single-body]");
+            const header = singleCard.querySelector("[data-single-header]");
+            const body = singleCard.querySelector("[data-single-body]");
+            singleCard.setAttribute("id", data.name); // this sets an id on the single card equal to the 'name' found in our data (the pokemon name)
+            console.log("this is our single card ->", singleCard);
             header.innerHTML = `<h3>${data.name}</h3>`;
             body.innerHTML = `
                 <img src="${data.sprites.front_default}" alt="picture of ${data.name}">
@@ -67,14 +69,17 @@ fetch(url)
                 <li>Height: ${data.height}'</li>
                 <li>Weight: ${data.weight} Lbs.</li>
                 <li>Base Experience: ${data.base_experience}</li>
+                <form action="javascript:deleteCard('${data.name}')">
+                    <button class="btn" type="submit">Remove Pok&eacute;mon</button>
+                </form>
                 `
             pokeSingleContainer.append(singleCard); // This appends each card to our <div data-poke-single-container> held in our 'pokeCardContainer' const.
         });
     }
 
 
-function clearPokes(elementID) {
-        document.getElementById(elementID).innerHTML="";
+function clearPokes(elementId) {
+        document.getElementById(elementId).innerHTML="";
     }
     
     // this function removes the hide class from our reset button when a pokemon card is added to the deck. It's attached to the 'Add Pokemon' button created on each card.
@@ -85,10 +90,22 @@ function removeHide() {
     }
     
     // this function adds the hide class to our reset button when the 'Reset Deck' button is pressed. It's attached to that button.
-function addHide() {
+function hideBtn() {
         let element = document.getElementById("resetBtn");
         element.classList.add("hide");
     }
+
+    // this function clears the card by using the javaScript 'remove()' function
+function deleteCard(elementId) {
+    let element = document.getElementById(elementId);
+    element.remove();
+}
+
+//     // this function adds the hide class to a card with the id that equals the name of the card DO NOT USE IT LEAVES INVISIBLE INSTANCES OF THE CARD
+// function addHide(elementId) {
+//     let element = document.getElementById(elementId);
+//     element.classList.add("hide");
+// }
 
 
 // // this block fetches our code for an individual pokemon.

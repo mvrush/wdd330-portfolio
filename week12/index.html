@@ -37,7 +37,7 @@
             <input type="search" id="search" placeholder="enter query..." data-search>
         </div>
         <div class="reset-div">
-        <button onclick="clearPokes('singleDisplay');addHide()" class="btn hide" id="resetBtn">Reset Deck</button>
+        <button onclick="clearPokes('singleDisplay');hideBtn()" class="btn hide" id="resetBtn">Reset Deck</button>
         </div>
         <div class="single-display" id="singleDisplay" data-poke-single-container></div>
         <div class="user-cards" id="userCards" data-poke-cards-container></div>
@@ -49,9 +49,9 @@
             </div>
         </template>
         <template data-poke-single-template>
-            <div class="single-info">
-                <div class="single-header" single-header></div>
-                <div class="single-body" single-body></div>
+            <div class="single-info" data-single-info>
+                <div class="single-header" data-single-header></div>
+                <div class="single-body" data-single-body></div>
             </div>
         </template>
     </main>
