@@ -95,7 +95,8 @@ function hideBtn() {
         element.classList.add("hide");
     }
 
-    // this function clears the card by using the javaScript 'remove()' function
+    // this function clears the card by using the javaScript 'remove()' function. It finds the element by the id and then removes the entire element.
+    // I'm using it above to remove the entire div that holds the single pokemon card. It's called by the 'Remove Pokemon' button.
 function deleteCard(elementId) {
     let element = document.getElementById(elementId);
     element.remove();

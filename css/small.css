@@ -73,7 +73,7 @@ header img {
 
 /*----------- NAVIGATION --------------*/
 nav button {
-    margin: 0 70%;
+    margin: 0 68%; /* sets top and bottom margin to 0 and sets L-R margin to 68%. Effectively moves button 68% to the right */
     padding: 0;
     display: block;
     background-color: transparent;

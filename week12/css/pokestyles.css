@@ -51,6 +51,11 @@ input {
     margin-left: .5rem;
 }
 
+.single-info form {
+    text-align: center;
+    margin-top: 1rem;
+}
+
 .user-cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* makes is so the cards fill the width of the screen and auto-size to columns on small screens */
