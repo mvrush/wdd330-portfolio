@@ -9,7 +9,7 @@ console.log("this is our pokeCardContainer const ->", pokeCardContainer); // loo
 
 let pokemon = []; // this will be used to create a 'pokemon' object that we will loop through. Here we create an empty 'pokemon' array.
 
-// I add an event listener to the 'searchInput' const. Everytime a letter of space is typed into id="input" the listener hears it.
+// I add an event listener to the 'searchInput' const. Everytime a letter or space is typed into id="input" the listener hears it.
 searchInput.addEventListener("input", (e) => {
     const value = e.target.value.toLowerCase(); // this looks at what the user types in the search input, converts it 'toLowerCase(), and thats the 'value' of our 'target' event which is 'e' and stores it in the 'value' const. If you don't convert everything to lower case you won't find matches since case sensitivity is native. You can have it be case sensitive if you want.
     console.log("this is our 'value' const ->", value); // this checks to see if our event listener is listening to what's entered into our search input.
