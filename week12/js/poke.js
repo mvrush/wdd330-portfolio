@@ -52,7 +52,7 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=1126") // uses fetch() to call ou
 })
 
 function singleData(url) {
-// fetch("https://pokeapi.co/api/v2/pokemon/10034") // Use this line for testing in place of fetch(url)
+// fetch("https://pokeapi.co/api/v2/pokemon/10034") // Use this line for testing in place of fetch(url). The url is passed into the function from the 'url' data contained in each Pokemon's JSON data.
 fetch(url)
     .then(res => res.json())
     // .then(data => console.log("this is our single pokemon API data", data)); // This is to test our response.
