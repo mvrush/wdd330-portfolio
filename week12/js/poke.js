@@ -26,7 +26,8 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=1126") // uses fetch() to call ou
  .then(res => res.json()) // recieves a response which it then uses an arrow function to convert to json using json()
  // .then(data => console.log("This is the API data we recieved ->", data))  // used to test whether we got our data back.
     .then(data => {     // Then takes that json() which is filled with our 'data' from the API. We use arrow functions to manipulate the data.
-    pokemon = data['results'].map(poke => { // uses our data object and then pops down to the ['results'] array. Then loops through the data 'results' array (found in our returned object) pulling each 'pokemon' using the 'map()' function and creates a card which it adds to our 'poke' array defined above.
+    // console.log("THIS IS OUR POKEMON 'Data' RETURNED FROM THE API -> ", data); // This console.logs all the data we received so you can see the structure in the console.
+    pokemon = data['results'].map(poke => { // uses our data object and then pops down to the ['results'] array held in our API received data. Then loops through the data 'results' array (found in our returned object) pulling each 'pokemon' using the 'map()' function and creates a card which it adds to our 'poke' array defined above.
     // This looks at the content from our HTML page template 'data-poke-template' which is stored in our pokeCardTemplate variable
     const card = pokeCardTemplate.content.cloneNode(true).children[0]; // 'cloneNode(true)' clones all 'content' in the 'pokeCardTemplate' const. We then specify the first child node 'children[0]' and store it in the 'card' const
     // it returns our card template which you can see using console.log(card) to see the content stored in the 'card' const.
@@ -46,7 +47,7 @@ fetch("https://pokeapi.co/api/v2/pokemon?limit=1126") // uses fetch() to call ou
     // console.log("this is each 'poke' from our 'data' created with the 'forEach()' loop ->", poke);
     // console.log("this is what's in the 'header' const ->", header); // 
     // console.log("this is what's in the 'body' const ->", body);
-    return { name: poke.name, url: poke.url, element: card} // here we return an object. This object conatins our poke name, poke email, and the card element.
+    return { name: poke.name, url: poke.url, element: card} // here we return an object. This object conatins our poke name, poke email, and the card element. Each object will be added to our 'pokemon' array held in the 'pokemon' variable.
     })
 })
 
